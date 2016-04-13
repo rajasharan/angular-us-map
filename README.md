@@ -9,20 +9,20 @@ An angular module to show data while hovering over different states.
 angular.module('myApp', [us-map]);
 ```
 
-#### Pass raw strings surrounded by single quotes
+#### Pass raw strings to `hover-data` (in single quotes)
 ```html
 <us-map>
-    <map-data state="VA" color="red" hover-data=" 'Virginia' "></map-data>
-    <map-data state="WV" color="blue" hover-data=" 'West\nVirginia' "  hover-padding="20px" hover-bg-color="grey" hover-color="yellow"></map-data>
+    <map-data state="VA" color="blue" hover-data=" 'Virginia' "></map-data>
+    <map-data state="WV" color="red" hover-data=" 'West \nVirginia' " hover-padding="20px" hover-bg-color="grey" hover-color="yellow"></map-data>
 </us-map>
 ```
 
-#### Pass any js object from your own controller
+#### Pass any JS object to `hover-data` from controller scope
 ```html
 <div ng-controller="TestController as ctrl">
     <us-map>
-        <map-data state="CA" color="#345" hover-data="ctrl.data | json"></map-data>
-        <map-data state="NY" color="" hover-data="ctrl.data | json"></map-data>
+        <map-data state="CA" color="#345" hover-data="ctrl.data['CA'] | json"></map-data>
+        <map-data state="WA" color="#f43" hover-data="ctrl.data['WA'] | json"></map-data>
     </us-map>
 </div>
 ```
