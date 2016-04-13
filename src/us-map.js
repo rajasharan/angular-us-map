@@ -100,6 +100,7 @@
                     preElem.css('color', scope.hoverColor);
                     preElem.css('background-color', scope.hoverBgColor);
                     preElem.css('padding', scope.hoverPadding);
+                    preElem.css('display', 'none');
 
                     stElem.on('mouseenter', function() {
                         preElem.css('display', 'block');
