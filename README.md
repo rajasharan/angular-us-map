@@ -16,6 +16,7 @@ angular.module('myApp', [us-map]);
     <map-data state="WV" color="red" hover-data=" 'West \nVirginia' " hover-padding="20px" hover-bg-color="grey" hover-color="yellow"></map-data>
 </us-map>
 ```
+![Virginia](/pics/VA.png) ![West Virginia](/pics/WV.png)
 
 #### Pass any JS object to `hover-data` from controller scope
 ```html
@@ -26,6 +27,7 @@ angular.module('myApp', [us-map]);
     </us-map>
 </div>
 ```
+![California](/pics/CA.png) ![Washington](/pics/WA.png)
 
 ## [License](/LICENSE)
     The MIT License (MIT)
