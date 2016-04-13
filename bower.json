@@ -1,7 +1,7 @@
 {
-  "name": "ngInfoMap",
+  "name": "angular-us-map",
   "dependencies": {
     "angular": "^1.5.3",
-    "bulma": "^0.0.18"
+    "bulma": "^0.0.19"
   }
 }
