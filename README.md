@@ -4,9 +4,9 @@ An angular module to show data while hovering over different states.
 ### [Live demo link](https://rajasharan.github.io/angular-us-map)
  
 ## Usage
-#### Import module as dependency
+#### Import module `usMap` as dependency
 ```js
-angular.module('myApp', [us-map]);
+angular.module('myApp', [usMap]);
 ```
 
 #### Pass raw strings to `hover-data` (in single quotes)
