@@ -1,0 +1,39 @@
+{
+  "name": "bulma",
+  "version": "0.0.18",
+  "homepage": "http://bulma.io",
+  "author": "jgthms <bbxdesign@gmail.com>",
+  "description": "Modern CSS framework based on Flexbox",
+  "main": "bulma.sass",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgthms/bulma.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "sass",
+    "flexbox",
+    "responsive",
+    "framework"
+  ],
+  "bugs": {
+    "url": "https://github.com/jgthms/bulma/issues"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "captain-git-hook": "~1.0.5",
+    "node-sass": "^3.4.2",
+    "postcss-cli": "^2.5.1"
+  },
+  "scripts": {
+    "autoprefix": "postcss --use autoprefixer --output css/bulma.css css/bulma.css",
+    "autoprefix-min": "postcss --use autoprefixer --output css/bulma.min.css css/bulma.min.css",
+    "build": "npm run clean && npm run build-sass && npm run build-sass-min && npm run autoprefix && npm run autoprefix-min",
+    "build-sass": "node-sass --output-style expanded --source-map true --output css/ bulma.sass --outFile css/bulma.css",
+    "build-sass-min": "node-sass --output-style compressed --source-map true --output css/ bulma.sass css/bulma.min.css",
+    "clean": "rm -rf css",
+    "pre-push": "npm run build && git add css && git commit --amend --no-edit",
+    "start": "npm run build-sass -- --watch"
+  }
+}
