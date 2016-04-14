@@ -1,9 +1,20 @@
 # angular-us-map
-An angular module to show data while hovering over different states.
+An angular module to show data while hovering over different US states.
 
 ### [Live demo link](https://rajasharan.github.io/angular-us-map)
+
+## Install
+```sh
+$ bower install angular-us-map --save
+```
  
 ## Usage
+#### include script file
+```html
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-us-map/src/us-map.js"></script>
+```
+
 #### Import module `usMap` as dependency
 ```js
 angular.module('myApp', ['usMap']);
@@ -12,8 +23,20 @@ angular.module('myApp', ['usMap']);
 #### Pass raw strings to `hover-data` (in single quotes)
 ```html
 <us-map>
-    <map-data state="VA" color="blue" hover-data=" 'Virginia' "></map-data>
-    <map-data state="WV" color="red" hover-data=" 'West \nVirginia' " hover-padding="20px" hover-bg-color="grey" hover-color="yellow"></map-data>
+    <map-data 
+        state="VA"
+        color="blue"
+        hover-data=" 'Virginia' ">
+    </map-data>
+
+    <map-data
+        state="WV"
+        color="red"
+        hover-data=" 'West \nVirginia' "
+        hover-padding="20px"
+        hover-bg-color="grey"
+        hover-color="yellow">
+    </map-data>
 </us-map>
 ```
 ![Virginia](/pics/VA.png) ![West Virginia](/pics/WV.png)
