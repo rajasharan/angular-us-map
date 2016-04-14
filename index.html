@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <title></title>
 
+    <link rel="stylesheet" href="bower_components/bulma/css/bulma.min.css">
+
     <script src="bower_components/angular/angular.min.js"></script>
-    <script src="src/us-map.js"></script>
+    <script src="bower_components/angular-us-map/src/us-map.js"></script>
     <script src="usage.js"></script>
 </head>
 <body>
-    <div ng-controller="TestController as ctrl">
+    <div class="container" ng-controller="TestController as ctrl">
         <us-map>
             <map-data state="VA" color="blue" hover-data="'Virginia'"></map-data>
             <map-data state="WV" color="red" hover-data="'West\nVirginia'" hover-padding="20px" hover-bg-color="grey" hover-color="yellow"></map-data>

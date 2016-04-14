@@ -90,29 +90,30 @@
                 }
 
                 if(scope.state) {
-                    var preElem = elem.find('pre');
+                    var pre = elem.find('pre');
                     var stElem = ctrl.getStateElement(scope.state);
 
                     //hack to get the grandfather scope
                     scope.data = scope.$parent.$eval(scope.hoverData);
 
-                    preElem.css('position', 'absolute');
-                    preElem.css('color', scope.hoverColor);
-                    preElem.css('background-color', scope.hoverBgColor);
-                    preElem.css('padding', scope.hoverPadding);
-                    preElem.css('display', 'none');
+                    pre.css('position', 'fixed');
+                    pre.css('color', scope.hoverColor);
+                    pre.css('background-color', scope.hoverBgColor);
+                    pre.css('padding', scope.hoverPadding);
+                    pre.css('display', 'none');
+                    pre.css('z-index', '20');
 
                     stElem.on('mouseenter', function() {
-                        preElem.css('display', 'block');
+                        pre.css('display', 'block');
                     });
 
                     stElem.on('mousemove', function(e) {
-                        preElem.css('left', e.pageX+'px');
-                        preElem.css('top', e.pageY+'px');
+                        pre.css('left', e.clientX+'px');
+                        pre.css('top', e.clientY+'px');
                     });
 
                     stElem.on('mouseout', function() {
-                        preElem.css('display', 'none');
+                        pre.css('display', 'none');
                     });
 
                     if(scope.color) {

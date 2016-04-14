@@ -1,7 +1,8 @@
 {
-  "name": "angular-us-map",
+  "name": "angular-us-map-demo",
   "dependencies": {
     "angular": "^1.5.3",
-    "bulma": "^0.0.19"
+    "bulma": "^0.0.19",
+    "angular-us-map": "^0.1.1"
   }
 }

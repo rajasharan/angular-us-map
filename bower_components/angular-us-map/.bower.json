@@ -1,0 +1,38 @@
+{
+  "name": "angular-us-map",
+  "description": "An angular module to show data while hovering over different US states",
+  "license": "MIT",
+  "homepage": "http://rajasharan.github.io/angular-us-map/",
+  "authors": [
+    "Raja Sharan Mamidala <rajasharan@gmail.com>"
+  ],
+  "keywords": [
+    "angular",
+    "us-map",
+    "map-data"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rajasharan/angular-us-map.git"
+  },
+  "dependencies": {
+    "angular": "^1.5.3"
+  },
+  "ignore": [
+    "pics",
+    "index.html",
+    "usage.js",
+    "node_modules",
+    "bower_components"
+  ],
+  "version": "0.1.1",
+  "_release": "0.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.1",
+    "commit": "0ec1736b56e11a502c3cae1a98a29d4f6f752b47"
+  },
+  "_source": "https://github.com/rajasharan/angular-us-map.git",
+  "_target": "^0.1.1",
+  "_originalSource": "angular-us-map"
+}
