@@ -25,14 +25,14 @@
     "node_modules",
     "bower_components"
   ],
-  "version": "0.1.1",
-  "_release": "0.1.1",
+  "version": "0.2.0",
+  "_release": "0.2.0",
   "_resolution": {
     "type": "version",
-    "tag": "v0.1.1",
-    "commit": "0ec1736b56e11a502c3cae1a98a29d4f6f752b47"
+    "tag": "v0.2.0",
+    "commit": "a3346bd249b0e34924b10e82aa164f4c2d709745"
   },
   "_source": "https://github.com/rajasharan/angular-us-map.git",
-  "_target": "^0.1.1",
+  "_target": "^0.2.0",
   "_originalSource": "angular-us-map"
 }

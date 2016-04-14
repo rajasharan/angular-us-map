@@ -46,6 +46,8 @@
                 transcludeFn(function(clone) {
                     elem.append(clone);
                 });
+
+                elem.css('display', 'flex');
             }
         };
     }])

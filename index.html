@@ -5,6 +5,7 @@
     <title></title>
 
     <link rel="stylesheet" href="bower_components/bulma/css/bulma.min.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
 
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-us-map/src/us-map.js"></script>
@@ -12,12 +13,17 @@
 </head>
 <body>
     <div class="container" ng-controller="TestController as ctrl">
-        <us-map>
-            <map-data state="VA" color="blue" hover-data="'Virginia'"></map-data>
-            <map-data state="WV" color="red" hover-data="'West\nVirginia'" hover-padding="20px" hover-bg-color="grey" hover-color="yellow"></map-data>
-            <map-data state="CA" color="#345" hover-data="ctrl.data['CA'] | json"></map-data>
-            <map-data state="WA" color="#f43" hover-data="ctrl.data['WA'] | json"></map-data>
-        </us-map>
+        <div class="columns">
+            <div class="column is-half">
+                <us-map>
+                    <map-data state="VA" color="blue" hover-data="'Virginia'"></map-data>
+                    <map-data state="WV" color="red" hover-data="'West\nVirginia'" hover-padding="20px" hover-bg-color="grey" hover-color="yellow"></map-data>
+                    <map-data state="CA" color="#345" hover-data="ctrl.data['CA'] | json"></map-data>
+                    <map-data state="WA" color="#f43" hover-data="ctrl.data['WA'] | json"></map-data>
+                </us-map>
+            </div>
+            <div class="column is-half"></div>
+        </div>
     </div>
 </body>
 </html>
