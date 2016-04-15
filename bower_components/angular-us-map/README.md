@@ -9,7 +9,7 @@ $ bower install angular-us-map --save
 ```
  
 ## Usage
-#### include script file
+#### Include `us-map.js` script (after angular)
 ```html
 <script src="bower_components/angular/angular.min.js"></script>
 <script src="bower_components/angular-us-map/src/us-map.js"></script>
@@ -20,33 +20,32 @@ $ bower install angular-us-map --save
 angular.module('myApp', ['usMap']);
 ```
 
-#### Pass raw strings to `hover-data` (in single quotes)
+#### Add your html inside `<map-data>`
 ```html
 <us-map>
-    <map-data 
-        state="VA"
-        color="blue"
-        hover-data=" 'Virginia' ">
+    <map-data state="VA" color="blue" hover-bg-color="#f5f7fa">
+        <p>Virginia</p>
     </map-data>
 
-    <map-data
-        state="WV"
-        color="red"
-        hover-data=" 'West \nVirginia' "
-        hover-padding="20px"
-        hover-bg-color="grey"
-        hover-color="yellow">
+    <map-data state="WV" color="red" hover-padding="20px" hover-bg-color="grey" hover-color="yellow">
+        West <br>
+        Virginia
     </map-data>
 </us-map>
 ```
 ![Virginia](/pics/VA.png) ![West Virginia](/pics/WV.png)
 
-#### Pass any JS object to `hover-data` from controller scope
+#### Add any scope object inside `<map-data>`
 ```html
 <div ng-controller="TestController as ctrl">
     <us-map>
-        <map-data state="CA" color="#345" hover-data="ctrl.data['CA'] | json"></map-data>
-        <map-data state="WA" color="#f43" hover-data="ctrl.data['WA'] | json"></map-data>
+        <map-data state="CA" color="#345" hover-bg-color="#f5f7fa">
+            <pre>{{ctrl.data['CA'] | json}}</pre>
+        </map-data>
+
+        <map-data state="WA" color="#f43" hover-bg-color="#white">
+            <pre>{{ctrl.data['WA'] | json}}</pre>
+        </map-data>
     </us-map>
 </div>
 ```

@@ -9,20 +9,78 @@
 
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-us-map/src/us-map.js"></script>
+
+    <link rel="stylesheet" href="app.css">
     <script src="usage.js"></script>
 </head>
 <body>
-    <div class="container" ng-controller="TestController as ctrl">
-        <div class="columns">
-            <div class="column is-half">
-                <us-map>
-                    <map-data state="VA" color="blue" hover-data="'Virginia'"></map-data>
-                    <map-data state="WV" color="red" hover-data="'West\nVirginia'" hover-padding="20px" hover-bg-color="grey" hover-color="yellow"></map-data>
-                    <map-data state="CA" color="#345" hover-data="ctrl.data['CA'] | json"></map-data>
-                    <map-data state="WA" color="#f43" hover-data="ctrl.data['WA'] | json"></map-data>
-                </us-map>
+    <section class="hero is-small is-success">
+        <div class="hero-header">
+            <header class="header">
+                <div class="container">
+                    <div class="header-left">
+                        <a class="header-item" href="/"><span class="title">angular-us-map</span></a>
+                    </div>
+
+                    <div class="header-right">
+                        <!--<a class="header-item is-active">Usage</a>-->
+                        <!--<a class="header-item">Usage</a>-->
+                        <span class="header-item">
+                            <a class="button is-success" href="https://github.com/rajasharan/angular-us-map">
+                                <i class="fa fa-github"> GitHub</i>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+		<div class="hero-content is-text-left">
+			<div class="container">
+				<h1 class="title">
+                    Example Usage of <code>&lt;us-map&gt;</code> and <code>&lt;map-data&gt;</code>
+				</h1>
+                <h2 class="subtitle is-4 container">
+                    Democratic Primaries <span id="date" class="subtitle is-6">(*as of Apr 15 2016)</span>
+                </h2>
+			</div>
+		</div>
+    </section>
+
+    <div id="map" class="columns is-vcentered" ng-controller="TestController as ctrl">
+
+        <div class="column is-half">
+            <us-map>
+                <div ng-repeat="result in ctrl.data">
+                    <map-data state="{{result.st}}" color="{{ctrl.color(result)}}">
+                        <div class="message is-info">
+                            <div class="message-header">
+                                {{result.state}} ({{result.total}} delegates)
+                            </div>
+
+                            <div class="message-body">
+                                <div class="columns is-vcentered">
+                                    <div class="column title">
+                                        {{ctrl.winnerName(result)}} <br>
+                                        {{ctrl.winnerCount(result)}} <i class="fa fa-flag-checkered"></i>
+                                    </div>
+
+                                    <div class="column subtitle">
+                                        {{ctrl.looserName(result)}} <br>
+                                        ( {{ctrl.looserCount(result)}} )
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </map-data>
+                </div>
+            </us-map>
+        </div>
+
+        <div id="code" class="column is-half">
+            <div ng-repeat="line in ctrl.lines track by $index">
+                <pre>{{line}}</pre>
             </div>
-            <div class="column is-half"></div>
         </div>
     </div>
 </body>

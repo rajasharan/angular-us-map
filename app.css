@@ -1,0 +1,12 @@
+#map {
+    background: #97cd76;
+}
+
+#code {
+    border: 2px solid #94A988;
+    padding: 0px;
+}
+
+#date {
+    vertical-align: sub;
+}

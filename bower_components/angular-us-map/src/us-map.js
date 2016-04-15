@@ -71,51 +71,41 @@
             scope: {
                 state: '@',
                 color: '@',
-                hoverData: '@',
-                hoverColor: '@', //defaults to #69707a
-                hoverBgColor: '@', //defaults to #f5f7fa
-                hoverPadding: '@', //defaults to 5px
-                hoverTitle: '@', //not used yet
+                hoverColor: '@',
+                hoverBgColor: '@',
+                hoverPadding: '@'
             },
             require: '^^usMap',
+            transclude: true,
             link: function(scope, elem, attr, ctrl) {
-                if(!scope.hoverColor) {
-                    scope.hoverColor = '#69707a';
-                }
-
-                if(!scope.hoverBgColor) {
-                    scope.hoverBgColor = '#f5f7fa';
-                }
-
-                if(!scope.hoverPadding) {
-                    scope.hoverPadding = '5px';
-                }
-
+                elem.css('position', 'fixed');
+                elem.css('z-index', '20');
+                elem.css('white-space', 'nowrap');
+                elem.css('display', 'none');
                 if(scope.state) {
-                    var pre = elem.find('pre');
+                    if(scope.hoverBgColor) {
+                        elem.css('background-color', scope.hoverBgColor);
+                    }
+                    if(scope.hoverColor) {
+                        elem.css('color', scope.hoverColor);
+                    }
+                    if(scope.hoverPadding) {
+                        elem.css('padding', scope.hoverPadding);
+                    }
+
                     var stElem = ctrl.getStateElement(scope.state);
 
-                    //hack to get the grandfather scope
-                    scope.data = scope.$parent.$eval(scope.hoverData);
-
-                    pre.css('position', 'fixed');
-                    pre.css('color', scope.hoverColor);
-                    pre.css('background-color', scope.hoverBgColor);
-                    pre.css('padding', scope.hoverPadding);
-                    pre.css('display', 'none');
-                    pre.css('z-index', '20');
-
                     stElem.on('mouseenter', function() {
-                        pre.css('display', 'block');
+                        elem.css('display', 'block');
                     });
 
                     stElem.on('mousemove', function(e) {
-                        pre.css('left', e.clientX+'px');
-                        pre.css('top', e.clientY+'px');
+                        elem.css('left', e.clientX+'px');
+                        elem.css('top', e.clientY+'px');
                     });
 
                     stElem.on('mouseout', function() {
-                        pre.css('display', 'none');
+                        elem.css('display', 'none');
                     });
 
                     if(scope.color) {
@@ -123,7 +113,7 @@
                     }
                 }
             },
-            template: '<pre class="us-map-data">{{data}}</pre>'
+            template: '<div ng-transclude></div>'
         };
     });
 })();

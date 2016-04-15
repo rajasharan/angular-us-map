@@ -3,7 +3,7 @@
   "dependencies": {
     "angular": "^1.5.3",
     "bulma": "^0.0.19",
-    "angular-us-map": "^0.2.0",
+    "angular-us-map": "^1.0.0",
     "font-awesome": "^4.6.1"
   }
 }
