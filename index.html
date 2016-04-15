@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title></title>
 
+    <link rel="stylesheet" href="/bower_components/bulma/css/bulma.min.css">
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+
     <script src="/bower_components/angular/angular.min.js"></script>
     <script src="/src/us-map.js"></script>
     <script src="/usage.js"></script>
@@ -11,10 +14,62 @@
 <body>
     <div ng-controller="TestController as ctrl">
         <us-map>
-            <map-data state="VA" color="blue" hover-data="'Virginia'"></map-data>
-            <map-data state="WV" color="red" hover-data="'West\nVirginia'" hover-padding="20px" hover-bg-color="grey" hover-color="yellow"></map-data>
-            <map-data state="CA" color="#345" hover-data="ctrl.data['CA'] | json"></map-data>
-            <map-data state="WA" color="#f43" hover-data="ctrl.data['WA'] | json"></map-data>
+            <map-data state="VA" color="blue" hover-bg-color="#f5f7fa">
+                <p>Virginia</p>
+            </map-data>
+
+            <map-data state="WV" color="red" hover-padding="20px" hover-bg-color="grey" hover-color="yellow">
+                West <br>
+                Virginia
+            </map-data>
+
+            <map-data state="CA" color="#345" hover-bg-color="white">
+                <pre>{{ctrl.data['CA'] | json}}</pre>
+            </map-data>
+
+            <map-data state="WA" color="#f43" hover-bg-color="#f5f7fa">
+                <pre>{{ctrl.data['WA'] | json}}</pre>
+            </map-data>
+
+            <map-data state="CO" color="#127ED6">
+                <div class="message is-info">
+                    <div class="message-header">
+                        Colorado (66 delegates)
+                    </div>
+                    <div class="message-body">
+                        <div class="columns is-vcentered">
+                            <div class="column title">
+                                Sanders <br>
+                                38 <i class="fa fa-flag-checkered"></i>
+                            </div>
+                            <div class="column subtitle">
+                                Clinton <br>
+                                ( 28 )
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </map-data>
+
+            <map-data state="TX" color="#0350A2">
+                <div class="message is-info">
+                    <div class="message-header">
+                        Texas (222 delegates)
+                    </div>
+                    <div class="message-body">
+                        <div class="columns is-vcentered">
+                            <div class="column title">
+                                Clinton <br>
+                                147 <i class="fa fa-flag-checkered"></i>
+                            </div>
+                            <div class="column subtitle">
+                                Sanders <br>
+                                ( 75 )
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </map-data>
         </us-map>
     </div>
 </body>
