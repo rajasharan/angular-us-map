@@ -3,7 +3,7 @@
     .controller('TestController', ['$http', function($http) {
         var ctrl = this;
 
-        $http.get('/demo.json').success(function(data) {
+        $http.get('demo.json').success(function(data) {
             ctrl.data = data;
         });
 
