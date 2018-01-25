@@ -100,8 +100,8 @@
                     });
 
                     stElem.on('mousemove', function(e) {
-                        elem.css('left', e.clientX+'px');
-                        elem.css('top', e.clientY+'px');
+                        elem.css('left', e.clientX+10+'px');
+                        elem.css('top', e.clientY+10+'px');
                     });
 
                     stElem.on('mouseout', function() {
