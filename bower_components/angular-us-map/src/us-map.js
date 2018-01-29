@@ -78,11 +78,11 @@
             require: '^^usMap',
             transclude: true,
             link: function(scope, elem, attr, ctrl) {
-                elem.css('position', 'fixed');
-                elem.css('z-index', '20');
-                elem.css('white-space', 'nowrap');
-                elem.css('display', 'none');
                 if(scope.state) {
+                    elem.css('position', 'fixed');
+                    elem.css('z-index', '20');
+                    elem.css('white-space', 'nowrap');
+                    elem.css('display', 'none');
                     if(scope.hoverBgColor) {
                         elem.css('background-color', scope.hoverBgColor);
                     }
@@ -100,8 +100,8 @@
                     });
 
                     stElem.on('mousemove', function(e) {
-                        elem.css('left', e.clientX+'px');
-                        elem.css('top', e.clientY+'px');
+                        elem.css('left', e.clientX+10+'px');
+                        elem.css('top', e.clientY+10+'px');
                     });
 
                     stElem.on('mouseout', function() {

@@ -9,7 +9,7 @@ $ bower install angular-us-map --save
 ```
  
 ## Usage
-#### Include `us-map.js` script (after angular)
+#### Include `us-map.js` script after angular
 ```html
 <script src="bower_components/angular/angular.min.js"></script>
 <script src="bower_components/angular-us-map/src/us-map.js"></script>
@@ -50,6 +50,36 @@ angular.module('myApp', ['usMap']);
 </div>
 ```
 ![California](/pics/CA.png) ![Washington](/pics/WA.png)
+
+#### More complex example
+```html
+<div ng-controller="TestController as ctrl">
+    <us-map>
+        <div ng-repeat="result in ctrl.data track by $index">
+            <map-data state="{{result.state}}" color="{{result.color}}">
+                <div class="message">
+                    <div class="message-header">
+                        {{result.stateName}} ({{result.total}} delegates)
+                    </div>
+                    <div class="message-body">
+                        <div class="columns">
+                            <div class="column">
+                                {{result.winnerName}} <br>
+                                {{result.winnerCount}} <i class="fa fa-flag"></i>
+                            </div>
+                            <div class="column">
+                                {{result.looserName}} <br>
+                                {{result.looserCount}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </map-data>
+        </div>
+    </us-map>
+</div>
+```
+![Democratic Primaries](/pics/US.png)
 
 ## [License](/LICENSE)
     The MIT License (MIT)
